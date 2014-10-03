@@ -26,9 +26,6 @@ public class Cliente implements Runnable { //Implementa la interfaz Runnable
     public void run() {
         try{
             s = new Socket("localhost", 9999);
-//            ois = new ObjectInputStream(s.getInputStream());
-//            oos = new ObjectOutputStream(s.getOutputStream());
-            System.out.println("Conexion exitosa al servidor");
             this.recibir();
         } catch(Exception ex){
             ex.printStackTrace();

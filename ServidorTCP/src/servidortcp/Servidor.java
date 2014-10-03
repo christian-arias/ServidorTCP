@@ -24,13 +24,13 @@ public class Servidor implements Runnable{
     public void run() {
         try{
             ss = new ServerSocket(9999);
-            System.out.println("Servidor inició exitosamente");
-            System.out.println("Esperando conexiones");
+            System.out.println("Servidor> Servidor inició exitosamente");
+            System.out.println("Servidor> Esperando conexiones");
             
             while (true){
                 //Espera y acepta un nuevo Cliente
                 s = ss.accept();
-                System.out.println("Cliente conectado");
+                System.out.println("Servidor> Cliente conectado");
                 
                 //Se instancia una nueva clase Cliente y se lanza en un hilo aparte
                 HiloServidor hc = new HiloServidor(s);

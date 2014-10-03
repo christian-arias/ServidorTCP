@@ -37,8 +37,7 @@ public class HiloServidor implements Runnable{
 
     public void run() {
         try{
-            System.out.println("Estoy listo");
-            System.out.println(Thread.currentThread().getId());
+            System.out.println("Hilo " + Thread.currentThread().getId() + "> Conectado al Servidor " + s.getLocalAddress());
             while(!morir){
                 this.recibir();
             }
