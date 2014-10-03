@@ -25,7 +25,7 @@ public class Cliente implements Runnable { //Implementa la interfaz Runnable
 
     public void run() {
         try{
-            s = new Socket("localhost", 9999);
+            s = new Socket("localhost", 4444);
             this.recibir();
         } catch(Exception ex){
             ex.printStackTrace();
@@ -43,33 +43,7 @@ public class Cliente implements Runnable { //Implementa la interfaz Runnable
         }
     }
     
-//    public void recibir(){
-//        try{
-//            while(true){
-//                Object aux = ois.readObject();
-//                if (aux != null && aux instanceof String){
-//                    System.out.println((String) aux);
-//                }
-//            }
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
-//    }
-    
     public void recibir(){
-//        try{
-//            while(true){
-//                Object aux = ois.readObject();
-//                ResultSet send = null;
-//                String h;
-//                if (aux != null){
-//                    System.out.println(aux);
-//                    this.consulta();
-//                }
-//            }
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
         try{
             BufferedInputStream bis = new BufferedInputStream(this.s.getInputStream());
             InputStreamReader isr = new InputStreamReader(bis,"US-ASCII");

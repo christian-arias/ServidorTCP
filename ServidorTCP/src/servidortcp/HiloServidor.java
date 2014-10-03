@@ -37,7 +37,7 @@ public class HiloServidor implements Runnable{
 
     public void run() {
         try{
-            System.out.println("Hilo " + Thread.currentThread().getId() + "> Conectado al Servidor " + s.getLocalAddress());
+            System.out.println("Hilo " + Thread.currentThread().getId() + "> Conexión recibida desde " + s.getInetAddress());
             while(!morir){
                 this.recibir();
             }
@@ -67,11 +67,10 @@ public class HiloServidor implements Runnable{
                  * simbolos raros o numeros erroneos
                 */
                 Thread.sleep(100);
-                System.out.println(bis.available());
+                System.out.println("Hilo " + Thread.currentThread().getId() + "> " + bis.available() + " bytes disponibles"); //Cuenta el número de bytes disponibles para ser leidos
                 if (bis.available() == 5){
                     while ( (c = bis.read()) != 37 ) instr.append(Integer.toString(c));
-                    System.out.println(instr);
-                    System.out.println("Codigo");
+                    System.out.println("Hilo " + Thread.currentThread().getId() + "> " + "UID: " + instr);
                 } else {
                     System.out.println("Acerque nuevamente");
                     isr.close();
@@ -79,6 +78,10 @@ public class HiloServidor implements Runnable{
                     this.s.close();
                     morir = true;
                 }
+                isr.close();
+                    bis.close();
+                    this.s.close();
+                    morir = true;
             } 
         }catch (Exception ex){
             ex.printStackTrace();

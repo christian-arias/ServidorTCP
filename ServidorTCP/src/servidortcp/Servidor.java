@@ -14,7 +14,7 @@ import javax.sql.DataSource;
  * @author ChristianXavier
  */
 public class Servidor implements Runnable{
-    private ServerSocket ss;
+    public ServerSocket ss;
     private Socket s;
     
     //Constructor de la clase Servidor
@@ -23,7 +23,7 @@ public class Servidor implements Runnable{
 
     public void run() {
         try{
-            ss = new ServerSocket(9999);
+            ss = new ServerSocket(4444);
             System.out.println("Servidor> Servidor inició exitosamente");
             System.out.println("Servidor> Esperando conexiones");
             
