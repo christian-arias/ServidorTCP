@@ -66,7 +66,7 @@ public class HiloServidor implements Runnable{
                  * set de caracteres ASCII lo cual provocaria que se reciba
                  * simbolos raros o numeros erroneos
                 */
-                Thread.sleep(100);
+                Thread.sleep(200);
                 System.out.println("Hilo " + Thread.currentThread().getId() + "> " + bis.available() + " bytes disponibles"); //Cuenta el número de bytes disponibles para ser leidos
                 if (bis.available() == 5){
                     while ( (c = bis.read()) != 37 ) instr.append(Integer.toString(c));
@@ -78,10 +78,6 @@ public class HiloServidor implements Runnable{
                     this.s.close();
                     morir = true;
                 }
-                isr.close();
-                    bis.close();
-                    this.s.close();
-                    morir = true;
             } 
         }catch (Exception ex){
             ex.printStackTrace();

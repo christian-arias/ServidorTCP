@@ -23,7 +23,7 @@ public class Servidor implements Runnable{
 
     public void run() {
         try{
-            ss = new ServerSocket(4444);
+            ss = new ServerSocket(5555);
             System.out.println("Servidor> Servidor inició exitosamente");
             System.out.println("Servidor> Esperando conexiones");
             

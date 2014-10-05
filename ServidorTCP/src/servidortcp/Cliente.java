@@ -25,7 +25,7 @@ public class Cliente implements Runnable { //Implementa la interfaz Runnable
 
     public void run() {
         try{
-            s = new Socket("localhost", 4444);
+            s = new Socket("localhost", 5555);
             this.recibir();
         } catch(Exception ex){
             ex.printStackTrace();

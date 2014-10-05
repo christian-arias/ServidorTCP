@@ -1,11 +1,13 @@
 package servidortcp;
 
 import java.io.BufferedOutputStream;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
- *
  * @author Christian Arias
  * @email christian_arias_89@homail.com
  */
@@ -129,7 +131,7 @@ public class vServidor extends javax.swing.JFrame {
     }//GEN-LAST:event_btMensajeActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        
+       
     }//GEN-LAST:event_formWindowClosing
 
     private void btClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btClienteActionPerformed
